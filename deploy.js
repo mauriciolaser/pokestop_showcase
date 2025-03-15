@@ -9,7 +9,7 @@ const config = {
   port: Number(process.env.DEPLOY_FTP_PORT),  // Aseguramos que sea numérico
   localRoot: __dirname + "/dist",             // Aquí se asume que tu build se genera en /dist
   remoteRoot: process.env.DEPLOY_FTP_PATH,      // Ruta remota definida en el .env.production
-  include: ["*", "**/*"],                      // Incluye todos los archivos y carpetas
+  include: ["*", "**/*", ".*", "**/.*"],       // Incluye todos los archivos, incluidos los ocultos
   deleteRemote: true,                          // Borra en remoto lo que no exista localmente
   forcePasv: true                              // Fuerza el modo PASV
 };
