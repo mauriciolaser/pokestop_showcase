@@ -4,10 +4,12 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "deploy": "node deploy.js"
     },
     "dependencies": {
         "axios": "^0.27.2",
+        "dotenv": "^16.4.7",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-masonry-css": "^1.0.16",
@@ -15,6 +17,7 @@
     },
     "devDependencies": {
         "@vitejs/plugin-react": "^4.0.0",
+        "ftp-deploy": "^2.4.7",
         "vite": "^4.0.0"
     }
 }

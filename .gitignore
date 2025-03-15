@@ -1,4 +1,5 @@
 .env
 .env.development.local
+.env.production
 /dist
 /node_modules
