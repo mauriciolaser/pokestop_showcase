@@ -8,7 +8,6 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 const Showcase = () => {
   const { city: urlCity } = useParams();
-  // Si no se proporciona la ciudad en la URL, usamos "barcelona" por defecto
   const city = urlCity || "barcelona";
 
   const [images, setImages] = useState([]);
@@ -16,6 +15,7 @@ const Showcase = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [seed, setSeed] = useState(null);
+  const [selectedImageId, setSelectedImageId] = useState(null);
 
   const limit = 500;
 
@@ -61,6 +61,13 @@ const Showcase = () => {
     setPage(nextPage);
   };
 
+  // Manejo del clic en la imagen: selecciona/deselecciona
+  const handleImageClick = (id) => {
+    console.log("Imagen clickeada:", id);
+    setSelectedImageId(selectedImageId === id ? null : id);
+  };
+  
+
   const breakpointColumnsObj = {
     default: 4,
     1024: 3,
@@ -86,8 +93,25 @@ const Showcase = () => {
           columnClassName="masonry-column"
         >
           {images.map((img) => (
-            <div key={img.id} className="masonry-item">
-              <img src={img.public_url} alt={img.original_name} loading="lazy" />
+            <div
+              key={img.id}
+              className="masonry-item"
+              onClick={() => handleImageClick(img.id)}
+              style={{ position: "relative", cursor: "pointer" }}
+            >
+              <img
+                src={img.public_url}
+                alt={img.original_name}
+                loading="lazy"
+                style={{
+                  filter: selectedImageId === img.id ? "brightness(0.3)" : "none",
+                }}
+              />
+              {selectedImageId === img.id && (
+                <div className="overlay">
+                  {img.original_name}
+                </div>
+              )}
             </div>
           ))}
         </Masonry>
