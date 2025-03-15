@@ -1,17 +1,4 @@
-# image_tagger
+# PokéStop Showcase
 
-Frontend: React. 
-
-Backend: Configurado para ser implementado en un servidor Apache. Recomiendo implementarlo en XAMPP.
-
-Reemplazar las variables de entorno y gestionarlas con vlucas/phpdotenv. En caso no se cuente con phpdotenv hay que instalar composer en la carpeta de backend.
-
-## Sobre el programa
-
-Carga las imágenes y tagéalas. 
-Los usuarios solo pueden ver sus tags. 
-Al exportar los tags se puede ver todos los tags agregados y trabajar en un merge.
-
-## Notas
-
-La carga de imágenes no está limitada. Es posible que el batch falle si son demasiadas y el servidor no está acondicionada para recibirlas. Más importantemente, se ha probado subiendo un batch de 5k imágenes y se ha corrompido las tablas 'beyond repair'. 
+Usando React + Vite + Masonry para generar una vista de las PokéStops. 
+Incluye una llamada a una API mediante la .env
