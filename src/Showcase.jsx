@@ -79,7 +79,7 @@ const Showcase = () => {
     <>
       {isLoading && images.length === 0 && (
         <div className="loading-overlay">
-          <div className="loading-text">Cargando</div>
+          <div className="loading-text">Loading</div>
         </div>
       )}
 
