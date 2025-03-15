@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para la página 404 o mensaje cuando no se especifica ciudad */
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}

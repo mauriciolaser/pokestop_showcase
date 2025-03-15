@@ -1,0 +1,4 @@
+.env
+.env.development.local
+/dist
+/node_modules
