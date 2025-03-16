@@ -2,11 +2,10 @@
     "name": "pokestop_showcase",
     "version": "1.0.0",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
+        "dev": "node copy-index.js && vite",
+        "build": "node copy-index.js && vite build && rimraf index.html",
         "preview": "vite preview",
-"deploy": "npm run build && node deploy.js"
-
+        "deploy": "node copy-index.js && vite build && rimraf index.html && node deploy.js"
     },
     "dependencies": {
         "axios": "^0.27.2",
@@ -18,7 +17,10 @@
     },
     "devDependencies": {
         "@vitejs/plugin-react": "^4.0.0",
+        "copyfiles": "^2.4.1",
+        "cpx": "^1.5.0",
         "ftp-deploy": "^2.4.7",
+        "rimraf": "^6.0.1",
         "vite": "^4.0.0"
     }
 }

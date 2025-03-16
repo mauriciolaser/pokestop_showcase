@@ -3,3 +3,5 @@
 .env.production
 /dist
 /node_modules
+.development.index.html
+index.html
