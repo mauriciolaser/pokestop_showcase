@@ -7,6 +7,10 @@ import "./index.css"; // Aquí puedes agregar estilos globales si lo deseas
 if (import.meta.env.VITE_GA_ID) {
   const gaId = import.meta.env.VITE_GA_ID;
 
+  // Definir dataLayer y gtag antes de la carga del script
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+
   // Agregar el script de Google Analytics dinámicamente
   const script = document.createElement("script");
   script.async = true;
@@ -14,11 +18,8 @@ if (import.meta.env.VITE_GA_ID) {
   document.head.appendChild(script);
 
   script.onload = () => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args) { window.dataLayer.push(args); }
-
     gtag('js', new Date());
-    gtag('config', gaId);
+    gtag('config', gaId, { send_page_view: true });
   };
 }
 
