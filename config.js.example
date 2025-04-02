@@ -1,0 +1,9 @@
+// config.js
+// Configuración local para deploy (no subir este archivo a Git, incluirlo en .gitignore)
+module.exports = {
+  DEPLOY_FTP_USER: "tuusuario",
+  DEPLOY_FTP_PASSWORD: "tucontraseña",
+  DEPLOY_FTP_HOST: "tuservidor.ftp.com",
+  DEPLOY_FTP_PORT: 21, // Asegúrate de que sea el puerto correcto
+  DEPLOY_FTP_PATH: "/ruta/remota/en/servidor"
+};

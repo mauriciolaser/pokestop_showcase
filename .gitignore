@@ -5,3 +5,4 @@
 /node_modules
 .development.index.html
 index.html
+config.js
